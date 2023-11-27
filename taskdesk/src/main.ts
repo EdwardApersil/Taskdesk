@@ -1,0 +1,17 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AppModule } from './app/app.module';
+import { environment } from './app/environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+
+
+
+  // Initialize Firebase
+  AngularFireModule.initializeApp(environment.firebaseConfig);
